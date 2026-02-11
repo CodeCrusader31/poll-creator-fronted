@@ -4,7 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getPoll, submitVote } from "../api/pollApi";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:5000");
+// const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_API_URL.replace("/api", ""));
 
 
 const getVoterId = () => {

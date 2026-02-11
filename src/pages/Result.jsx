@@ -10,7 +10,8 @@ import ResultsHeader from "../components/results/ResultHeader";
 import ResultsList from "../components/results/ResultsList";
 import ShareSection from "../components/results/ShareSection";
 import QuickActions from "../components/results/QuickActions";
-const socket = io("http://localhost:5000");
+//const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_API_URL.replace("/api", ""));
 
 function Results() {
   const { id } = useParams();
