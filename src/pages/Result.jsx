@@ -11,8 +11,10 @@ import ResultsList from "../components/results/ResultsList";
 import ShareSection from "../components/results/ShareSection";
 import QuickActions from "../components/results/QuickActions";
 //const socket = io("http://localhost:5000");
-const socket = io(import.meta.env.VITE_API_URL.replace("/api", ""));
-
+//const socket = io(import.meta.env.VITE_API_URL.replace("/api", ""));
+const socket = io(import.meta.env.VITE_API_URL.replace("/api", ""), {
+  transports: ["websocket"],
+});
 function Results() {
   const { id } = useParams();
   const [poll, setPoll] = useState(null);
